@@ -1,0 +1,38 @@
+<div class='container'>
+  <h2>
+    {{$ctrl.case.case_number}}
+    <small>
+      {{$ctrl.case.case_type}}
+    </small>
+  </h2>
+
+  <hr>
+  <div class='row'>
+    <div class='col-md-4'>
+      <p class='lead'>{{$ctrl.case.summary}}</p>
+      <strong>Address:</strong>
+      {{$ctrl.case.address}}
+      <br><br>
+      <strong>Staff Recommendation:</strong>
+      {{$ctrl.case.staff_recommendation}}
+      <br><br>
+      <strong>Meeting Date:</strong>
+      {{$ctrl.case.meeting_date | date:'MM/dd/yyyy'}}
+      <br><br>
+      <strong>Decision:</strong>
+      {{$ctrl.case.judgement}}
+      <br><br>
+      <strong>Decision Date:</strong>
+      {{$ctrl.case.judgement_date2 | date:'MM/dd/yyyy'}}
+      <br><br>
+      <a href='{{$ctrl.case.web_link}}' class='btn btn-primary'>Download Staff Report</a>
+      <br><br>
+    </div>
+  <div class='col-md-8'>
+    <div id='map'></div>
+  </div>
+  </div>
+
+
+
+</div>

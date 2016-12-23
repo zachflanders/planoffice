@@ -1,0 +1,79 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Planning Case Manager</h1>
+    <p class="lead">Helping us be real smart and stuff.</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">
+        All Cases:
+        <a ui-sref='caseAdd' class='btn btn-primary pull-right'><i class='fa fa-plus'></i> Add Case</a>
+      </h2>
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i>
+            </div>
+            <input type="text" class="form-control" placeholder="Search" ng-model="$ctrl.search">
+          </div>
+        </div>
+      </form>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>
+              <a href='#' ng-click="$ctrl.sortType='case_type';$ctrl.sortReverse=!$ctrl.sortReverse">
+                Type
+                <span ng-show="$ctrl.sortType == 'case_type' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'case_type' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href='#' ng-click="$ctrl.sortType='case_number';$ctrl.sortReverse=!$ctrl.sortReverse">
+                Reference Number
+                <span ng-show="$ctrl.sortType == 'case_number' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'case_number' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href='#' ng-click="$ctrl.sortType='address';$ctrl.sortReverse=!$ctrl.sortReverse">
+                Address
+                <span ng-show="$ctrl.sortType == 'address' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'address' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+              </a>
+              </th>
+            <th>
+              <a href='#' ng-click="$ctrl.sortType='judgement';$ctrl.sortReverse=!$ctrl.sortReverse">
+                Decision
+                <span ng-show="$ctrl.sortType == 'judgement' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'judgement' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href='#' ng-click="$ctrl.sortType='judgement_date';$ctrl.sortReverse=!$ctrl.sortReverse">
+                Date
+                <span ng-show="$ctrl.sortType == 'judgement_date' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'judgement_date' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  ng-repeat="case in $ctrl.cases | orderBy:$ctrl.sortType:$ctrl.sortReverse | filter:$ctrl.search">
+            <td>{{case.case_type}}</td>
+            <td>{{case.case_number}}</td>
+            <td>{{case.address}}</td>
+            <td>{{case.judgement}}</td>
+            <td>{{case.judgement_date2 | date:'MM/dd/yyyy'}}</td>
+            <td><a href='/case/{{case._id}}' class='btn btn-sm btn-default'>Open</a></td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>

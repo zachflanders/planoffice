@@ -1,0 +1,105 @@
+<div class='container'>
+  <h1>Add Case</h1>
+  <br><br>
+  <form class='form'>
+    <h3>Basic Information</h3>
+    <hr>
+  <div class='row'>
+    <div class='col-md-6'>
+
+        <div class="form-group">
+          <label for="case_type">Case Type</label>
+          <select class='form-control' id='case_type'>
+            <option></option>
+            <option>Change of Zone</option>
+            <option>Final Plan Review</option>
+            <option>Final Plat</option>
+            <option>Historic Landmark</option>
+            <option>Master Plan Amendment</option>
+            <option>Non Conforming Use Permit</option>
+            <option>Plan Review</option>
+            <option>Preliminary / Final Plan Review</option>
+            <option>Preliminary / Final Plat</option>
+            <option>Preliminary Plan Review</option>
+            <option>Preliminary Plat</option>
+            <option>Special Use Permit</option>
+            <option>Zoning Variance</option>
+          </select>
+        </div>
+      </div>
+      <div class='col-md-6'>
+        <div class="form-group">
+          <label for="case_number">Case Number</label>
+          <input type='text' id='case_number' class='form-control'></input>
+        </div>
+      </div>
+    </div>
+      <div class='cold-md-12'>
+        <div class="form-group">
+          <label for="summary">Summary</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <br><br>
+      <h3>Location</h3>
+      <hr>
+      <div class='row'>
+      <div class='col-md-12'>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <div class='input-group'>
+            <input type='text' id='address' class='form-control' ng-model='$ctrl.case.address'></input>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click='locate($ctrl.case.address)'>Locate</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-12'>
+        <div id='selectmap'></div>
+      </div>
+    </div>
+    <br><br>
+    <h3>Staffing</h3>
+    <hr>
+    <div class='row'>
+      <div class='col-md-6'>
+        <div class="form-group">
+          <label for="staff">Assign Staff</label>
+          <select class='form-control' id='staff'>
+            <option></option>
+            <option>Byron Toy</option>
+            <option>Cameron Casey</option>
+            <option>Jamie Hickey</option>
+            <option>Kyle Kobe</option>
+            <option>Rob Richardson</option>
+            <option>Zach Flanders</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <h3>Dates</h3>
+    <hr>
+    <div class=row>
+      <div class='col-md-6'>
+        <div class="form-group">
+          <label for="staff_recommendation">Planning Commission Meeting Date</label>
+          <input type='date' id='meeting_date' class='form-control'></input>
+        </div>
+      </div>
+      <div class='col-md-6'>
+        <div class="form-group">
+          <label for="meeting_date">Board of Commissioners Meeting Date</label>
+          <input type='date' id='meeting_date' class='form-control'></input>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <button class='btn btn-primary'>Add Case</button>
+  </form>
+  <br><br>
+</div>
